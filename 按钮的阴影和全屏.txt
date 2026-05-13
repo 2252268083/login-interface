@@ -1,0 +1,8 @@
+# 隐藏框：
+MainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+MainWindow.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+# 加阴影：
+self.label.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=25, xOffset=0, yOffset=0))
+self.label_2.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=25, xOffset=0, yOffset=0))
+self.pushButton.setGraphicsEffect(QtWidgets.QGraphicsDropShadowEffect(blurRadius=25, xOffset=3, yOffset=3))

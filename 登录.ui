@@ -294,7 +294,7 @@ border-radius:8px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">border:1px solid rgb(0,0,0);
-border-radius:8px;</string>
+bordar-radius:8px;</string>
      </property>
      <property name="placeholderText">
       <string>账号：</string>
