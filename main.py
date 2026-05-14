@@ -1,4 +1,6 @@
 
+import os
+import subprocess
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from auth import login1
@@ -12,6 +14,10 @@ class MainWindow(QMainWindow,DragaMixin):
         DragaMixin.__init__(self)
         self.loginUi = login.Ui_MainWindow()
         self.loginUi.setupUi(self)
+
+
+
+
         self.loginUi.widget_3.hide()#hide是隐藏的意思  3是注册
 
     #登录按钮的转换
@@ -37,8 +43,15 @@ class MainWindow(QMainWindow,DragaMixin):
     def change_widege2(self):
         self.loginUi.widget_3.hide()
         self.loginUi.widget_2.show() 
-    def login_ok(self):
+    def login_ok(self,window=None):
         print("成功")
+        self.hide()
+        scrip_path = r"F:\编程文件\Python代码\ai的调用\前后端通信.py"
+        python_exe = r"F:\Python3.10\python.exe"
+        if os.path.exists(scrip_path):
+            subprocess.Popen([python_exe,scrip_path],cwd=os.path.dirname(scrip_path))
+        else:
+            print("没找到文件")
 
 
 
