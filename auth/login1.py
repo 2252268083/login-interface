@@ -26,6 +26,11 @@ def login_check (ui , parent_window ,success_callback):
     password = ui.lineEdit_2.text()
 
     users = load_users()
+    if not username:
+        QMessageBox.information(parent_window,"提示","没填用户名")
+        return 
+
+
 
     if username in users and users[username] == password:
         QMessageBox.information(parent_window,"提示","登录成功")
@@ -39,6 +44,13 @@ def register_users(ui,parent_window):
     username = ui.lineEdit.text()
     password = ui.lineEdit_6.text()
     password_1 = ui.lineEdit_5.text()
+    if not username:
+        QMessageBox.warning(parent_window,"提示","智哥，你为空是啥意思啊")
+        return 
+
+    if not password:
+        QMessageBox.warning(parent_window,"提示","请填写密码")
+        return 
     if password !=password_1:
         QMessageBox.warning(parent_window,"提示","两个密码都不对")
         return 
